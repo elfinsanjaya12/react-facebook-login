@@ -11,7 +11,13 @@ class Facebook extends Component {
   };
 
   responseFacebook = response => {
-    console.log(response);
+    this.setState({
+      isLoggedIin: true,
+      userId: response.id,
+      name: response.name,
+      email: response.email,
+      picture: response.picture
+    });
   };
   componentClicked = () => console.log("clicked");
   render() {
