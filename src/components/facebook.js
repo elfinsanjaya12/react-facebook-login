@@ -11,6 +11,7 @@ class Facebook extends Component {
   };
 
   responseFacebook = response => {
+    console.log(response);
     this.setState({
       isLoggedIin: true,
       userId: response.id,
@@ -23,7 +24,14 @@ class Facebook extends Component {
   render() {
     let fbContent;
     if (this.state.isLoggedIin) {
-      fbContent = null;
+      fbContent = (
+        <div>
+          <img src={this.state.picture} alt={this.state.name} />
+          <h3>Welcome, {this.state.name}</h3>
+          <p>Email: {this.state.email}</p>
+          <p>{this.state.userId}</p>
+        </div>
+      );
     } else {
       fbContent = (
         <FacebookLogin
