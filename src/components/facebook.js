@@ -16,7 +16,7 @@ class Facebook extends Component {
       userId: response.id,
       name: response.name,
       email: response.email,
-      picture: response.picture
+      picture: response.picture.data.url
     });
   };
   componentClicked = () => console.log("clicked");
