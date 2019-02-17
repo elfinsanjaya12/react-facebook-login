@@ -9,9 +9,15 @@ class Facebook extends Component {
     email: "",
     picture: ""
   };
+
+  responseFacebook = response => {
+    console.log(response);
+  };
+  componentClicked = () => console.log("clicked");
   render() {
     let fbContent;
     if (this.state.isLoggedIin) {
+      fbContent = null;
     } else {
       fbContent = (
         <FacebookLogin
@@ -23,7 +29,7 @@ class Facebook extends Component {
         />
       );
     }
-    return <div />;
+    return <div>{fbContent}</div>;
   }
 }
 
